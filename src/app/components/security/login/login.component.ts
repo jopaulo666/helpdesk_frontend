@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.shared.token = null;
       this.shared.user = null;
       this.shared.showTemplate.emit(false);
-      this.message = 'Erro'
+      this.message = 'Erro';
     });
   }
 
