@@ -14,6 +14,9 @@ import { routes } from './app.routes';
 import { SharedService } from './services/shared.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserNewComponent } from './components/user-new/user-new.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { DialogService } from './dialog.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserNewComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { FormsModule } from '@angular/forms';
   providers: [
     UserService,
     SharedService,
+    DialogService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

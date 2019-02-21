@@ -1,7 +1,7 @@
-<aside class="main-sidebar"> 
+<aside class="main-sidebar">
   <section class="sidebar">
     <ul class="sidebar-menu" data-widget="tree">
-      
+
       <li class="treeview">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Usuários</span>
@@ -10,34 +10,34 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Lista</a></li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Novo Usuário</a></li>
+          <li><a [routerLink]="['/user-list']"><i class="fa fa-circle-o"></i> Listar</a></li>
+          <li><a [routerLink]="['/user-new']"><i class="fa fa-circle-o"></i> Novo Usuário</a></li>
         </ul>
       </li>
       <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Chamado</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Lista</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Novo Chamado</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-              <i class="fa fa-edit"></i> <span>Resumo</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Examinar</a></li>
-            </ul>
-          </li>
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Chamado</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Lista</a></li>
+          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Novo Chamado</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Resumo</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Examinar</a></li>
+        </ul>
+      </li>
 
-    </ul> 
+    </ul>
   </section>
 </aside>

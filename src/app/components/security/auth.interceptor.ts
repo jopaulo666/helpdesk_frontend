@@ -13,14 +13,8 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        //console de error
-        console.log('Chegou no interceptor -->');
         let authRequest: any;
-        //console de error
-        console.log('No interceptor verifica logado -->', this.shared.isLoggedIn);
-        if (this.shared.isLoggedIn) {
-            //console de error
-            console.log('Caiu no IF do interceptor -->');
+        if (this.shared.isLoggedIn()) {
             authRequest = req.clone({
                 setHeaders: {
                     'Authorization': this.shared.token
@@ -28,8 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
             });
             return next.handle(authRequest);
         } else {
-            //console de error
-            console.log('Caiu no else do interceptor -->');
             return next.handle(req);
         }
     }
