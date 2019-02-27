@@ -13,7 +13,6 @@
           <tr>
             <th>E-mail</th>
             <th>Perfil</th>
-            <th>Ações</th>
             <th style="width: 10px">&nbsp;</th>
             <th style="width: 10px">&nbsp;</th>
           </tr>
@@ -31,7 +30,7 @@
         <ul class="pagination pagination-sm no-margin pull-right">
           <li><a href="" (click)="setPreviosPage($event)">&laquo;</a></li>
           <li *ngFor="let p of pages; let i=index">
-            <a [ngClass]="{'pagination-focus': i == page}" href="" (click)="setPage(i, $event)">{{i+1}}</a>
+            <a [ngClass]="{'pagination-focus': i==page}" href="" (click)="setPage(i, $event)">{{i+1}}</a>
           </li>
           <li><a href="" (click)="setNextPage($event)">&raquo;</a></li>
         </ul>

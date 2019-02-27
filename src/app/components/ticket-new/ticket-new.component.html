@@ -1,0 +1,81 @@
+<div class="col-md-5" style="margin-left: 25%">
+  <!-- Horizontal Form -->
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Novo Ticket</h3>
+    </div>
+    <!-- Login -->
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="register()" novalidate>
+      <!-- Mensagem -->
+      <div [ngClass]="classCss" role="alert" *ngIf="message">
+        <strong>{{message.text}}</strong>
+      </div>
+      <div class="box-body"> 
+        <!-- Título -->   
+        <div [ngClass]="getFormGroupClass(title.invalid, title.dirty)">
+          <label for="inputTitle" class="col-sm-2 control-label">Título</label>
+          <div class="col-sm-10">
+            <input 
+              type="text"
+              [(ngModel)]="ticket.title"
+              class="form-control"
+              name="title"
+              id="inputTitle"              
+              #title="ngModel"
+              placeholder="Digite um título para o Ticket"
+              required>
+            <span class="help-block" *ngIf="title.invalid && title.dirty">Título obrigatório</span>
+          </div>
+        </div>
+        <!-- Prioridade --> 
+        <div [ngClass]="getFormGroupClass(priority.invalid, priority.dirty)">
+            <label for="inputPriority" class="col-sm-2 control-label">Prioridade</label>
+            <div class="col-sm-10">
+              <select
+              [(ngModel)]="ticket.priority"
+              class="form-control select2"
+              name="priority"
+              id="inputPriority"              
+              #priority="ngModel"
+              style="width: 100%"
+              required>
+              <option>High</option>
+              <option>Normal</option>
+              <option>Low</option>
+            </select>
+              <span class="help-block" *ngIf="priority.invalid && priority.dirty">Prioridade obrigatória</span>
+            </div>
+          </div>    
+          <!-- Descrição --> 
+          <div [ngClass]="getFormGroupClass(description.invalid, description.dirty)">
+            <label for="inputDescription" class="col-sm-2 control-label">Descrição</label>
+            <div class="col-sm-10">
+              <textarea
+                [(ngModel)]="ticket.description"
+                class="form-control"
+                name="description"
+                rows="3"
+                id="inputDescription"               
+                #description="ngModel"
+                placeholder="Digite uma descrição para o Ticket"
+                required>
+              </textarea>
+              <span class="help-block" *ngIf="description.invalid && description.dirty">Descrição obrigatório</span>
+            </div>
+          </div>
+          <!-- Imagem --> 
+          <div class="form-group">
+            <label for="inputImage" class="col-sm-2 control-label">Imagem</label>
+            <div class="col-sm-10">
+              <img [src]="ticket.image" width="50%" height="50%"> 
+              <input type="file" id="image" (change)="onFileChange($event)">
+            </div>
+          </div>    
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

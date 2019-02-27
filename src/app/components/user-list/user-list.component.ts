@@ -23,8 +23,7 @@ export class UserListComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private userService: UserService,
-    private router: Router
-  ) {
+    private router: Router) {
     this.shared = SharedService.getInstance();
   }
 
@@ -45,18 +44,18 @@ export class UserListComponent implements OnInit {
   }
 
   edit(id: string) {
-    this.router.navigate(['/user-new', id])
+    this.router.navigate(['/user-new', id]);
   }
 
   delete(id: string) {
-    this.dialogService.confirm('Deseja realmente excluir esse usuário?')
+    this.dialogService.confirm('Deseja realmente excluir esse registro ?')
       .then((candelete: boolean) => {
         if (candelete) {
           this.message = {};
           this.userService.delete(id).subscribe((responseApi: ResponseApi) => {
             this.showMessage({
-              type: 'error',
-              text: 'Registro deletado com sucesso!'
+              type: 'success',
+              text: `Registro deletado com sucesso!`
             });
             this.findAll(this.page, this.count);
           }, err => {
@@ -70,15 +69,15 @@ export class UserListComponent implements OnInit {
   }
 
   setNextPage(event: any) {
-    event.preventDefalt();
+    event.preventDefault();
     if (this.page + 1 < this.pages.length) {
       this.page = this.page + 1;
       this.findAll(this.page, this.count);
     }
   }
 
-  setPreviosPage(event: any) {
-    event.preventDefalt();
+  setPreviousPage(event: any) {
+    event.preventDefault();
     if (this.page > 0) {
       this.page = this.page - 1;
       this.findAll(this.page, this.count);
@@ -86,7 +85,7 @@ export class UserListComponent implements OnInit {
   }
 
   setPage(i, event: any) {
-    event.preventDefalt();
+    event.preventDefault();
     this.page = i;
     this.findAll(this.page, this.count);
   }

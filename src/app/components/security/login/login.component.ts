@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     return {
       'form-group': true,
       'has-error': isInvalid && isDirty,
-      'has-success': isInvalid && isDirty
+      'has-success': !isInvalid && isDirty
     };
   }
 
