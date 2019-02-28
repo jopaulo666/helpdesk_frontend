@@ -1,4 +1,4 @@
-import { Ticket } from './../model/tichet.model';
+import { Ticket } from '../model/ticket.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HELP_DESK_API } from './helpdesk.api';

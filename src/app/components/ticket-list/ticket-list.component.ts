@@ -3,7 +3,7 @@ import { TicketService } from './../../services/ticket.service';
 import { DialogService } from './../../dialog.service';
 import { SharedService } from './../../services/shared.service';
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from 'src/app/model/tichet.model';
+import { Ticket } from 'src/app/model/ticket.model';
 import { ResponseApi } from 'src/app/model/response-api';
 
 @Component({

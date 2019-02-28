@@ -1,7 +1,7 @@
 import { text } from '@angular/core/src/render3/instructions';
 import { ActivatedRoute } from '@angular/router';
 import { TicketService } from './../../services/ticket.service';
-import { Ticket } from './../../model/tichet.model';
+import { Ticket } from '../../model/ticket.model';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
